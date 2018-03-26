@@ -11,6 +11,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {SearchComponent} from './search/search.component';
 import {ProductService} from './shared/product.service';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -25,11 +26,11 @@ import {RouterModule} from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     // the following will be used when the user wants to navigate to the product details
     RouterModule.forRoot([
       // when the path is the root, display the home component
       {path: '', component: HomeComponent},
-
       // whenever this is the path after the root url, go to the product details
       {path: 'products/:productId', component: ProductDetailComponent}
     ]),
