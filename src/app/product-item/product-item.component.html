@@ -3,7 +3,7 @@
   <figcaption class="figure-caption">
     <h5>
       <a [routerLink]="['/products', product.id]">{{product.title}}</a>
-      <span>{{product.price | currency}}</span>
+      <span>{{product.price | currency:'EUR':true}}</span>
     </h5>
     <p>{{product.shortDescription}}</p>
   </figcaption>
