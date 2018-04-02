@@ -1,5 +1,5 @@
 <h4>Advanced Search</h4>
-<form #f="ngForm">
+<form #myForm="ngForm" (ngSubmit)="search(myForm.value)">
   <div class="form-group">
     <label for="title">Product title:</label>
     <input id="title"

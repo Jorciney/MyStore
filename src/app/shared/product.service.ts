@@ -5,13 +5,27 @@ import {Product} from './product';
 export class ProductService {
 
   getProducts(): Product[] {
+    if (foundProducts.length > 0) {
+      return foundProducts;
+    }
     return products;
   }
 
   getProductById(productId: number): Product {
     return products.find(p => p.id === productId);
   }
+
+  getProuctsByTitle(productTitle: string): Product[] {
+    products.map(p => {
+      if (p.title.startsWith(productTitle)) {
+        foundProducts.push(p);
+      }
+    });
+    return foundProducts;
+  }
 }
+
+const foundProducts: Product[] = [];
 
 const products = [
   {
